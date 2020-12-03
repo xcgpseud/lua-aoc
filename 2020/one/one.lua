@@ -1,5 +1,4 @@
 f            = require('libs.file')
---th           = require('libs.table_helper')
 
 local _lines = f:lines_from('2020/one/input.txt', function(line)
     return tonumber(line)
