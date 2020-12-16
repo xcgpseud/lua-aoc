@@ -88,8 +88,6 @@ function isValid2(passport)
     }
 
     for k, fn in pairs(validations) do
-        local val = passport[k]
-
         if passport[k] == nil or not fn(passport[k]) then
             return false
         end
