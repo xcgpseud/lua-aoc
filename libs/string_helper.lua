@@ -1,9 +1,15 @@
 StringHelper = {}
 
 function StringHelper:split(str, delimiter)
+    delimiter = delimiter or nil
+
     local out = {}
 
-    for match in ("%s%s"):format(str, delimiter):gmatch(("(.-)%s"):format(delimiter)) do
+    local tbl = delimiter == nil
+            and str:gmatch(".")
+            or ("%s%s"):format(str, delimiter):gmatch(("(.-)%s"):format(delimiter))
+
+    for match in tbl do
         table.insert(out, match)
     end
 
