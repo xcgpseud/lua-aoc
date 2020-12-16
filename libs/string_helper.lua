@@ -20,4 +20,8 @@ function StringHelper:countOccurrences(str, char)
     return select(2, str:gsub(char, ""))
 end
 
+function StringHelper:trim(str)
+    return str:gsub("^%s*(.-)%s*$", "%1")
+end
+
 return StringHelper
